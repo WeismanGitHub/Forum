@@ -44,7 +44,7 @@ app.use(errorHandler)
 
 const start = async () => {
     try {
-        await mongoose.connect(process.env.LOCAL_MONGO_URI, { autoIndex: true })
+        await mongoose.connect(process.env.MONGO_URI, { autoIndex: true })
         .then(console.log('Connected to database...'));
         
         app.listen(port, console.log(`Server is starting on ${port}...`));
