@@ -1,0 +1,10 @@
+extends layout
+block content
+    form(action='/comments/edit/' + comment._id, method='post')
+        div Body:
+        textarea(name='body', maxlength='500', rows='5', cols='50')
+        br
+        button(type='submit') Update Comment
+    br
+    form(action='/comments/delete/' + comment._id, method='post')
+        button(type='submit') Delete Comment

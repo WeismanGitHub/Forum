@@ -1,0 +1,37 @@
+extends layout
+block content
+    div(class='post')
+        h1 #{post.title}
+        h3 #{post.body}
+    br
+    div Created At: #{post.createdAt}
+    a(href='/users/' + post.creator._id) Creator: #{post.creator.name}
+    br
+    br
+    if loggedInUser._id == post.creator._id
+        form(action='/posts/edit/' + post._id, method='get')
+            button(type='submit') Edit Post
+        br
+    form(action='/comments/create/' + post._id, method='get')
+        button(type='submit') Comment
+    
+    br
+    br
+
+    h2 Comments:
+    
+    if post.comments.length
+        each comment in post.comments
+            ul
+                li= br
+                div(class='comment')
+                    h5 #{comment.body}
+                
+                h5
+                    div Created At: #{comment.createdAt}
+                    a(href='/users/' + comment.creatorId) Commenter
+
+                form(action='/comments/' + comment._id, method='get')
+                    button(type='submit') Get Comment
+    else
+        p There are no comments.

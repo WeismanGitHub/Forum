@@ -1,0 +1,16 @@
+extends layout
+block content
+    div(class='post')
+        h2 #{comment.body}
+    br
+    div Created At: #{comment.createdAt}
+    br
+    a(href='/users/' + comment.creator._id) Creator: #{comment.creator.name}
+    br
+    if loggedInUser._id == comment.creator._id
+        br
+        form(action='/comments/edit/' + comment._id, method='get')
+            button(type='submit') Edit Comment
+
+        form(action='/comments/delete/' + comment._id, method='post')
+            button(type='submit') Delete Comment

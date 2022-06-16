@@ -1,0 +1,12 @@
+extends layout
+block content
+    if thereArePosts
+        each post in posts
+            ul
+                li= br
+                div(class='post')
+                    h2
+                        a(href='/posts/' + post._id) #{post.title}
+                    h3 #{post.body}
+    else
+        h1 There are no posts.

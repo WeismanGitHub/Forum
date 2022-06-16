@@ -1,0 +1,21 @@
+extends layout
+block content
+    h1 #{user.name}
+    h3 Created At: #{user.createdAt}
+
+    form(action='/users/' + user._id + '/posts', method='get')
+        button(type='submit') Posts
+    br
+
+    if loggedInUser._id == user._id
+        form(action='/users/' + user._id, method='post')
+            div Name:
+            input(type='text', name='name')
+            div Password:
+            input(type='password', name='password')
+            div
+            button(type='submit') Update
+            
+        br
+        form(method='post', action='/users/delete/')
+            button(type='submit') Delete Account

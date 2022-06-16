@@ -1,0 +1,10 @@
+extends layout
+block content
+    form(action='/posts/', method='post')
+        h2 Create Post
+        div Title:
+        textarea(name='title', maxlength='50', rows='1', cols='50')
+        div Body:
+        textarea(name='body', maxlength='1000', rows='5', cols='50')
+        br
+        button(type='submit') Post

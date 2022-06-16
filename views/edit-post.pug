@@ -1,0 +1,12 @@
+extends layout
+block content
+    form(action='/posts/edit/' + post._id, method='post')
+        div Title:
+        textarea(name='title', maxlength='50', rows='1', cols='50')
+        div Body:
+        textarea(name='body', maxlength='1000', rows='5', cols='50')
+        br
+        button(type='submit') Update Post
+    br
+    form(action='/posts/delete/' + post._id, method='post')
+        button(type='submit') Delete Post

@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        title Forum
+        style
+            include ./styles.css
+    div(class='navbar')
+        form(method='get', action='/')
+            button(type='submit') Home
+        form(method='get', action='/users/' + loggedInUser._id)
+            button(type='submit') Account
+        form(method='get', action='/posts/')
+            button(type='submit') Create Post
+        form(method='post', action='/users/logout')
+            button(type='submit') Logout
+
+    block content

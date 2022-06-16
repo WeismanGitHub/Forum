@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+    background-color: aliceblue;
+}
+
+li {
+    list-style-type: none;
+}
+
+.navbar {
+    position: absolute;
+    left: 93%;
+}
+
+.post {
+    border: 1px solid black;
+    margin: 0 auto;
+    max-width: 300px;
+    word-wrap: break-word;
+}
+
+.comment {
+    border: 1px solid black;
+    margin: 0 auto;
+    max-width: 300px;
+    word-wrap: break-word;
+}

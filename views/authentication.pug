@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        title Forum
+        style
+            include ./styles.css
+    form(action='/authentication/login', method='post')
+        h2 Login
+        div Name:
+        input(type='text', name='name')
+        div Password:
+        input(type='password', name='password')
+        div
+        button(type='submit', value='login') Login
+
+    form(action='/authentication/register', method='post')
+        h2 Register
+        div Name:
+        input(type='text', name='name')
+        div Password:
+        input(type='password', name='password')
+        div
+        button(type='submit', value='register') Register
