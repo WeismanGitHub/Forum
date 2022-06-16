@@ -51,18 +51,6 @@ PostSchema.pre('deleteOne', { document: true }, async function() {
     await CommentSchema.deleteMany({ post: this._id })
 })
 
-PostSchema.pre('$addToSet', async function() {
-    if ('upvoted') {
-        //add one to post score
-        //add one to user score
-    }
-
-    if ('downvoted') {
-        //subtract one from post score
-        //subtract one from user score
-    }
-});
-
 PostSchema.plugin(schema => {
     schema.pre('findOneAndUpdate', setRunValidatorsAndSetNew);
     schema.pre('updateOne', setRunValidatorsAndSetNew);
